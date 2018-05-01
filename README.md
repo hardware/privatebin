@@ -29,6 +29,7 @@ PrivateBin is a minimalist, open source online pastebin where the server has zer
 | -------- | ----------- | ---- | ------------- |
 | **UID** | privatebin user id | *optional* | 991
 | **GID** | privatebin group id | *optional* | 991
+| **UPLOAD_MAX_SIZE** | Upload size limit | *optional* | 10M
 
 ### Volumes
 

@@ -7,7 +7,7 @@ ARG VERSION=1.1.1
 ARG GPG_FINGERPRINT="ABA9 B8F6 F448 B07F D7EA  4A1A 05D4 0A63 6AFA B34D"
 ARG SHA256_HASH="58106de1947d0f72eccbbec34bfabfbabf2b722a1605ff9bbfcde40414ee443c"
 
-ENV GID=991 UID=991
+ENV GID=991 UID=991 UPLOAD_MAX_SIZE=10M
 
 RUN echo "@community https://nl.alpinelinux.org/alpine/v3.7/community" >> /etc/apk/repositories \
  && apk -U upgrade \

@@ -11,6 +11,9 @@ fi
 # This file is useless with for this nginx setup
 touch /privatebin/cfg/.htaccess
 
+# Set upload size limit
+sed -i "s/<UPLOAD_MAX_SIZE>/$UPLOAD_MAX_SIZE/g" /etc/php7/php-fpm.conf /etc/nginx/nginx.conf
+
 # Fix permissions
 chown -R $UID:$GID /privatebin /services /var/log /var/lib/nginx
 
