@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 LABEL description="A minimalist, open source online pastebin where the server has zero knowledge of pasted data" \
       maintainer="Hardware <contact@meshup.net>"
@@ -9,7 +9,7 @@ ARG SHA256_HASH="58106de1947d0f72eccbbec34bfabfbabf2b722a1605ff9bbfcde40414ee443
 
 ENV GID=991 UID=991 UPLOAD_MAX_SIZE=10M
 
-RUN echo "@community https://nl.alpinelinux.org/alpine/v3.7/community" >> /etc/apk/repositories \
+RUN echo "@community https://nl.alpinelinux.org/alpine/v3.8/community" >> /etc/apk/repositories \
  && apk -U upgrade \
  && apk add -t build-dependencies \
     gnupg \
