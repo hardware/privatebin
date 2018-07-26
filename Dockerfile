@@ -3,9 +3,9 @@ FROM alpine:3.8
 LABEL description="A minimalist, open source online pastebin where the server has zero knowledge of pasted data" \
       maintainer="Hardware <contact@meshup.net>"
 
-ARG VERSION=1.1.1
-ARG GPG_FINGERPRINT="ABA9 B8F6 F448 B07F D7EA  4A1A 05D4 0A63 6AFA B34D"
-ARG SHA256_HASH="58106de1947d0f72eccbbec34bfabfbabf2b722a1605ff9bbfcde40414ee443c"
+ARG VERSION=1.2
+ARG GPG_FINGERPRINT="2BFA 310A EBA9 4EB3 2013  1AE8 0C78 CF39 B20D 890B"
+ARG SHA256_HASH="cd446f2bb318fb2f04bfdfedd5a6b89f2a03fd0fa474bdeeb34f6fad3f4219ab"
 
 ENV GID=991 UID=991 UPLOAD_MAX_SIZE=10M
 
@@ -29,8 +29,8 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.8/community" >> /etc/a
  && cd /tmp \
  && wget -q https://github.com/PrivateBin/PrivateBin/archive/${VERSION}.zip \
  && wget -q https://github.com/PrivateBin/PrivateBin/releases/download/${VERSION}/PrivateBin-${VERSION}.zip.asc \
- && wget -q https://privatebin.info/key/rugk.asc \
- && gpg --import rugk.asc \
+ && wget -q https://privatebin.info/key/security.asc \
+ && gpg --import security.asc \
  && echo "Verifying both integrity and authenticity of ${VERSION}.zip..." \
  && CHECKSUM=$(sha256sum ${VERSION}.zip | awk '{print $1}') \
  && if [ "${CHECKSUM}" != "${SHA256_HASH}" ]; then echo "ERROR: Checksum does not match!" && exit 1; fi \
