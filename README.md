@@ -10,7 +10,7 @@ PrivateBin is a minimalist, open source online pastebin where the server has zer
 
 - Lightweight & secure image (no root process)
 - Based on Alpine
-- Latest PrivateBin version (1.2)
+- Latest PrivateBin version (1.2.1)
 - With Nginx and PHP7
 
 ### Build-time variables
